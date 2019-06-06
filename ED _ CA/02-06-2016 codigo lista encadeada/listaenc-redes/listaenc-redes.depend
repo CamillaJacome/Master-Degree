@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1464697506 source:c:\users\alex\downloads\listaenc-redes\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1464716039 c:\users\alex\downloads\listaenc-redes\lista.h
+
+1464716039 source:c:\users\alex\downloads\listaenc-redes\listacode.c
+	"lista.h"
+	<stdio.h>
+	<stdlib.h>
+

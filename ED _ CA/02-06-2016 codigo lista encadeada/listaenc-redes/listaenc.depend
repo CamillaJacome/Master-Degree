@@ -1,0 +1,24 @@
+# depslib dependency file v1.0
+1464634867 source:d:\ed\listaenc\listacode.c
+	"lista.h"
+	<stdio.h>
+
+1464635036 d:\ed\listaenc\lista.h
+
+1464634364 source:d:\ed\listaenc\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1464697504 source:d:\listaenc\main.c
+	<stdio.h>
+	<stdlib.h>
+	"lista.h"
+
+1464697187 d:\listaenc\lista.h
+
+1464697473 source:d:\listaenc\listacode.c
+	"lista.h"
+	<stdio.h>
+	<stdlib.h>
+
