@@ -89,7 +89,8 @@ public:
 		{
 			int v1 = find(subset, arestas[i].obterVertice1());
 			int v2 = find(subset, arestas[i].obterVertice2());
-
+			
+			//se for diferente, não forma ciclos
 			if(v1 != v2)
 			{
 				arvore.push_back(arestas[i]);
