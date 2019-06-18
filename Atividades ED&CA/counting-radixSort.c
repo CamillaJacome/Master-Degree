@@ -33,7 +33,13 @@ void countSort(int *A, int k, int n)
  	}
 
 }
+void radixsort(int *A, int k, int n) 
+{
+    int B[n], exp;
+    for (exp = 1; k/exp > 0; exp *= 10)
+        countSort(A,exp,k);
 
+}
 
 int main()
 {
