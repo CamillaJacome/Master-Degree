@@ -1,44 +1,56 @@
 #include <stdio.h>
-#define max 10
+#define MAX 10
 
-void radixsort(int *V, int n) 
+void countSort(int *A, int k, int n)
 {
+	int B[n];
+	int C[MAX];
+	int i,j;
+	
+	//inicializa com zero
+	for (i=0;i<n;i++)
+		B[i]=0;
+	//inicializa com zero
+	for (i=0;i<k;i++)
+		C[i]=0;
+	//complementos de casas de cada valor
+	
+	for(j=0;j<n;j++)
+		C[(A[j]/k) %10]++;
 
-	int i,exp=1,maior=0,bucket[n],temp[n];
-
-	for(i=0;i<n;i++) 
+	for(i=1;i<=MAX;i++)
+		C[i]=C[i]+C[i-1];
+	
+	for(j=n-1;j>=0;j--)
 	{
-		if(V[i]>maior) 
-			maior = V[i];		
-	}
+		B[(C[(A[j]/k) %10] )-1]=A[j];
+		C[(A[j]/k)%10]= C[(A[j]/k)%10]-1;
 
-	while((maior/exp) > 0) 
-	{
-		for (i=0;i<n;i++) 
-			bucket[i] = 0;
-
-		for(i=0;i<n;i++) 
-			bucket[(V[i] / exp) % 10]++;
-		
-		for(i=1;i<n;i++) 
-			bucket[i] += bucket[i-1];
-		
-		for(i=(n - 1);i>=0;i--) 
-			temp[--bucket[(V[i] / exp) % 10]] = V[i];
-		
-		for(i=0;i<n;i++) 
-			V[i] = temp[i];
-		
-		exp *= 10;
 	}
 }
+void radixsort(int *A, int k, int n) 
+{
+    int exp;
+    for (exp = 1; k/exp > 0; exp *= 10)
+        //k=k/exp;
+        countSort(A,exp,n);
+ 
+}
 
-int main() {
-	int v[7] = {329,457,657,839,436,720,355};
-	int v2[10] = {5,2,7,8,10,6,1,4,9,3};
-	radixsort(v2,10);
-	for (int i=0;i<10;i++) {
-		printf("%d ", v2[i]);
-	}
-	return(0);
+int main()
+{
+ 	
+	int v[]={5,6,8,1,3,1,7};
+	int v7[7] = {329,457,657,839,436,720,355};
+	int v3[10] = {5,2,7,8,10,6,1,4,9,3};
+	int v2[]={6,7,1,1,2,4,2,8};
+ 	//countSort(v7,839,7);
+ 	radixsort(v,8,7);
+
+	for(int i=0;i<7;i++)
+ 	{
+ 		printf("%d\n",v[i]);
+ 	}
+
+	return 0;
 }
