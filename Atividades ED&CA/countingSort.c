@@ -7,15 +7,17 @@ void countSort(int *A, int k, int n)
 	int C[k];
 	int i,j;
 
+	//inicializa com zero
 	for (i=0;i<k;i++)
 		B[i]=0;
-
+	//inicializa com zero
 	for (i=0;i<k;i++)
 		C[i]=0;
-
+	//complementos de casas de cada valor
 	for(j=0;j<n;j++)
 		C[A[j]]++;
 	
+	//coloca cada elemento em sua posição correta e ordenada
 	for(i=1;i<=k;i++)
 		C[i]=C[i]+C[i-1];
 	
