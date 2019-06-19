@@ -37,22 +37,13 @@ int knapsack(int W, int *peso, int *b, int n)
 
 int main()
 {
-	// capacidade máxima da mochila: W
-	int W = 20;
-
-	// número de elementos
-	int n = 5;
-
-	// vetor com os valores (benefício) de cada elemento
+	int W=20, n=5;
 	int b[] = {3, 5, 8, 4, 10};
-
-	// vetor com os pesos de cada elemento
 	int peso[] = {2, 4, 5, 3, 9};
 
-	// obtém o máximo valor que pode ser colocado na mochila
-	int max_valor = knapsack(W, peso, b, n);
+	int x = knapsack(W, peso, b, n);
 
-	printf("Valor maximo: %d\n", max_valor);
+	printf("Valor maximo: %d\n",x);
 
 	return 0;
 }
